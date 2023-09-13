@@ -17,7 +17,7 @@ const showMenu = ref(false);
               <a href="/" class="space-x-3 md:mr-5">
                   <h1 class="text-xl text-primary font-semibold">
                   Medusa
-                  
+                  <font-awesome-icon :icon="['fas', 'cart-shopping']" class="text-[#393333]"/>
                   </h1>
 
                   </a>
@@ -50,6 +50,15 @@ const showMenu = ref(false);
                 to=""
                 class="text-[#716c6d] hover:text-primary text font-medium py-1 px-3"
                 >Fqs
+              </RouterLink>
+            </li>
+
+            <li class="hidden sm:flex">
+              <RouterLink
+                to=""
+                class="text-[#716c6d] hover:text-primary text font-medium py-1 px-3"
+                >
+                <font-awesome-icon :icon="['fas', 'cart-flatbed-suitcase']" class="text-[#716c6d]"/>
               </RouterLink>
             </li>
           </ul>
