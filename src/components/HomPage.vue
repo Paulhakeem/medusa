@@ -31,8 +31,8 @@ import Products from "./products.vue";
       </div>
     </div>
 
-    <div class="mx-12 top-3 bottom-10 flex justify-center gap-20 flex-wrap">
-      <div class="bg-white w-60 h-40 text-center rounded-md flex ">
+    <div class="mx-12 top-3 bottom-10 flex justify-center gap-12 flex-wrap">
+      <div class="bg-white w-72 h-40 text-center rounded-md flex ">
         <div class="mt-2 cursor-pointer">
           <p class="mx-3 font-semibold font-sans text-left pt-4 text-[#393333]">
             Summer <br />
@@ -50,7 +50,7 @@ import Products from "./products.vue";
 
         <img src="../assets/bulb.png" alt="" />
       </div>
-      <div class="bg-white w-60 h-40 text-center rounded-md flex">
+      <div class="bg-white w-72 h-40 text-center rounded-md flex">
         <div class="mt-2 cursor-pointer">
           <p class="mx-3 font-semibold font-sans text-left pt-4 text-[#393333]">
             New <br />
@@ -68,13 +68,13 @@ import Products from "./products.vue";
 
         <img src="../assets/chair.png" alt="" />
       </div>
-      <div class="bg-white w-60 h-40 text-center rounded-md flex">
+      <div class="bg-white w-72 h-40 text-center rounded-md flex">
         <div class="mt-2 cursor-pointer">
           <p class="mx-3 font-semibold font-sans text-left pt-4 text-[#393333]">
             Treding <br />Products
           </p>
           <p class="mx-3 text-xs font-light text-[#9e9d9d] text-left pt-4">
-            Redox color Table
+            Fridge
           </p>
           <button
             class="mx-3 text-md font-light text-primary mt-3 items-left hover:bg-primary hover:text-white p-1 rounded-full w-28"
@@ -83,7 +83,7 @@ import Products from "./products.vue";
           </button>
         </div>
 
-        <img src="../assets/table.png" alt="" class="w-16 object-cover" />
+        <img src="../assets/fridge.png" alt="" class="" />
       </div>
     </div>
   </div>
