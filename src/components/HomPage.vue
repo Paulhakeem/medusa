@@ -1,6 +1,8 @@
 <script setup>
 import Header from "./Header.vue";
 import Products from "./products.vue";
+
+
 </script>
 <template>
   <Header/>

@@ -1,5 +1,8 @@
 <script setup>
+// import { ref } from "vue";
 import Header from "../components/Header.vue";
+
+
 </script>
 <template class="bg-[#eff4fc]">
   <Header />
@@ -43,7 +46,7 @@ import Header from "../components/Header.vue";
           <font-awesome-icon :icon="['fas', 'mobile']" class="text-primary" />
           <input
             type="tel"
-            name = 'phone'
+            name="phone"
             placeholder="eg 0700000000"
             class="outline-none text-[#393333] border-b-2 border-b-text-[#393333] font-light pl-2 caret-gray-300 focus:border-b-primary"
           />
@@ -76,8 +79,7 @@ import Header from "../components/Header.vue";
           </button>
         </div>
         <button
-          class="bg-white border-2 border-[#e9e9ee] text-[#9e9d9d] font-light p-2 w-32 rounded-md
-           hover:bg-primary hover:text-white hover:border-none"
+          class="bg-white border-2 border-[#e9e9ee] text-[#9e9d9d] font-light p-2 w-32 rounded-md hover:bg-primary hover:text-white hover:border-none"
         >
           <font-awesome-icon
             :icon="['fas', 'motorcycle']"
@@ -128,35 +130,43 @@ import Header from "../components/Header.vue";
     </div>
 
     <!-- payment details -->
-    <div class="w-80 h-full bg-white justify-center border border-[#9e9d9d] rounded-md">
+    <div
+      class="w-80 h-full bg-white justify-center border border-[#9e9d9d] rounded-md"
+    >
       <div class="w-80 h-56 bg-primary rounded-md">
         <div class="flex mx-4 py-3 justify-between">
-          <font-awesome-icon :icon="['fas', 'sd-card']" class="text-white text-3xl rotate-90"/>
-          <font-awesome-icon :icon="['fas', 'wifi']" class="text-white text-3xl rotate-90"/>
+          <font-awesome-icon
+            :icon="['fas', 'sd-card']"
+            class="text-white text-3xl rotate-90"
+          />
+          <font-awesome-icon
+            :icon="['fas', 'wifi']"
+            class="text-white text-3xl rotate-90"
+          />
         </div>
 
         <footer class="mx-4 my-24">
           <p class="font-thin text-white tracking-wide mb-3">Exp 12/20</p>
 
           <div class="flex justify-between tracking-wide">
-           <p class="text-white font-light font-mono">****5968</p>
-           <p class="font-light text-white">Mr. Hakeem Paul</p>
+            <p class="text-white font-light font-mono">****5968</p>
+            <p class="font-light text-white">Mr. Hakeem Paul</p>
           </div>
         </footer>
       </div>
-      
+
       <div class="flex justify-between mx-6 my-4">
         <h4 class="text-[#393333] font-medium">Manage Cards</h4>
-      <font-awesome-icon :icon="['fas', 'arrow-right']" class="text-[#393333 cursor-pointer" />
+        <font-awesome-icon
+          :icon="['fas', 'arrow-right']"
+          class="text-[#393333 cursor-pointer"
+        />
       </div>
-      <hr class="mx-6 my-4">
-
-
+      <hr class="mx-6 my-4" />
 
       <div class="text-center text-3xl font-light my-8">
         <h1>20 items</h1>
       </div>
-
 
       <div class="my-10 mx-6 space-y-8">
         <div class="flex justify-between">
@@ -171,7 +181,7 @@ import Header from "../components/Header.vue";
           <h3 class="text-[#9e9d9d] font-light">Delivery ServiceS</h3>
           <h3 class="text-[#393333]">+$30</h3>
         </div>
-        <hr>
+        <hr />
       </div>
 
       <div class="my-4 mx-6">
@@ -184,9 +194,12 @@ import Header from "../components/Header.vue";
       <div class="my-10 text-center ml-4 mr-4">
         <button class="bg-primary p-4 w-full text-white font-light">
           Pay
-          <font-awesome-icon :icon="['fas', 'arrow-right']" class="text-[#393333 cursor-pointer" />
+          <font-awesome-icon
+            :icon="['fas', 'arrow-right']"
+            class="text-[#393333 cursor-pointer"
+          />
         </button>
       </div>
-      </div>
+    </div>
   </div>
 </template>
