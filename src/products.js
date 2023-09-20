@@ -28,4 +28,32 @@ export default [
     product_descrption: "Powerful camera upgrades",
     product_price: 999,
   },
+  {
+    _id: "0",
+    product_iamge_url: "https://img.freepik.com/free-photo/shoes_1203-8153.jpg?size=626&ext=jpg&uid=R75402652&ga=GA1.2.28834319.1688862588&semt=ais",
+    product_name: "FILA",
+    product_descrption: "High quality ",
+    product_price: 20,
+  },
+  {
+    _id: "0",
+    product_iamge_url: "https://img.freepik.com/free-photo/leather-boots_1203-8146.jpg?w=900&t=st=1695236595~exp=1695237195~hmac=eef78092fff36ed0fd214e241fcf242ab64015455da6577cdb133ac49a1341b5",
+    product_name: "Timberland",
+    product_descrption: "New timber in town high quality",
+    product_price: 40,
+  },
+  {
+    _id: "0",
+    product_iamge_url: "https://img.freepik.com/premium-photo/pair-nike-shoes-are-top-each-other_771335-48561.jpg?size=626&ext=jpg&uid=R75402652&ga=GA1.2.28834319.1688862588&semt=ais",
+    product_name: "JORDAN 4",
+    product_descrption: "Original and high quality shoe",
+    product_price: 100,
+  },
+  {
+    _id: "0",
+    product_iamge_url: "https://img.freepik.com/free-photo/white-high-top-sneakers-unisex-footwear-fashion_53876-106036.jpg?w=900&t=st=1695236256~exp=1695236856~hmac=01cf2e8c721d654fa581cd46a019284ccadd8168f838a0a842fc213c75c7b910",
+    product_name: "AIR FORCE",
+    product_descrption: "High quality original air",
+    product_price: 72,
+  },
 ];
