@@ -7,7 +7,7 @@ import Header from "../components/Header.vue";
 <template class="bg-[#eff4fc]">
   <Header />
   <hr class="mx-4" />
-  <div class="flex flex-wrap mx-4 my-10 justify-between">
+  <div class="darshbord flex mx-6 my-10 justify-between">
     <div>
       <button class="text-primary tracking-wider font-medium">
         <font-awesome-icon :icon="['fas', 'caret-left']" />
