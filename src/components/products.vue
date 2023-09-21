@@ -1,22 +1,26 @@
 <script setup>
 import { ref } from "vue";
-import products from "../products.js";
+ import products from "../products.js";
+import {useItemsStore} from '../stores/items.js'
 
-const items = ref(products);
+const itemsStore = useItemsStore()
+
+
+ const items = ref(products);
 </script>
 <template>
   <div
     class="p-3 bg-primary text-center mx-4 my-10 rounded-tl-md rounded-tr-md"
-  >
+  > 
     <p class="text-white font-light text-2xl text-center mr-4">Flash Sales</p>
   </div>
 
   <div class="flex flex-wrap gap-6 mx-4 my-8 items-center justify-center">
-    <div v-for="product in items" :key="product._id">
+    <div v-for="product in items" :key="product.id">
       <div class="border-2 border-[#f4f2f3] rounded-md w-72 h-full">
         <img :src="product.product_iamge_url" alt="" class="w-72" />
         <h2 class="mx-3 text-md font-semibold font-sans pt-2 text-[#393333]">
-          {{ product.product_name }}
+          {{ items.product_name }}
         </h2>
         <p class="mx-3 text-xs font-light text-[#9e9d9d] text-left">
           {{ product.product_descrption }}
