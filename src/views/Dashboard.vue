@@ -1,7 +1,14 @@
 <script setup>
-// import { ref } from "vue";
-import Header from "../components/Header.vue";
+import {ref} from 'vue'
+import Header from "../components/Header.vue"
+import { useItemsStore } from '../stores/items.js'
 
+const itemsStore = useItemsStore()
+
+const firstName = ref('')
+const lastName = ref('')
+const phoneNumber = ref('')
+const email = ref('')
 
 </script>
 <template class="bg-[#eff4fc]">
@@ -28,6 +35,7 @@ import Header from "../components/Header.vue";
         <div class="flex my-6 gap-4">
           <font-awesome-icon :icon="['far', 'user']" class="text-primary" />
           <input
+          v-model="firstName"
             type="text"
             placeholder="First Name"
             class="outline-none text-[#393333] border-b-2 font-light border-b-text-[#393333] pl-2 caret-gray-300 focus:border-b-primary"
@@ -37,6 +45,7 @@ import Header from "../components/Header.vue";
         <div class="flex my-6 gap-4">
           <font-awesome-icon :icon="['fas', 'id-badge']" class="text-primary" />
           <input
+          v-model="lastName"
             type="text"
             placeholder="Last Name"
             class="outline-none text-[#393333] border-b-2 border-b-text-[#393333] font-light pl-2 caret-gray-300 focus:border-b-primary"
@@ -45,6 +54,7 @@ import Header from "../components/Header.vue";
         <div class="flex my-6 gap-4">
           <font-awesome-icon :icon="['fas', 'mobile']" class="text-primary" />
           <input
+          v-model="phoneNumber"
             type="tel"
             name="phone"
             placeholder="eg 0700000000"
@@ -57,6 +67,7 @@ import Header from "../components/Header.vue";
             class="text-primary"
           />
           <input
+            v-model="email"
             type="email"
             placeholder="you@gmail.com"
             class="outline-none text-[#393333] border-b-2 border-b-text-[#393333] font-light pl-2 caret-gray-300 focus:border-b-primary"
@@ -150,7 +161,7 @@ import Header from "../components/Header.vue";
 
           <div class="flex justify-between tracking-wide">
             <p class="text-white font-light font-mono">****5968</p>
-            <p class="font-light text-white">Mr. Hakeem Paul</p>
+            <p class="font-light text-white text-right mb-12">Name: {{ firstName }} {{ lastName }}</p>
           </div>
         </footer>
       </div>
@@ -165,7 +176,7 @@ import Header from "../components/Header.vue";
       <hr class="mx-6 my-4" />
 
       <div class="text-center text-3xl font-light my-8">
-        <h1>20 items</h1>
+        <h1>{{ itemsStore.count }} items</h1>
       </div>
 
       <div class="my-10 mx-6 space-y-8">
