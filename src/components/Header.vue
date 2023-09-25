@@ -26,8 +26,13 @@ modalActive.value = !modalActive.value
    <hr class="text-gray-400 mx-2 my-2">
 
 
-   <div v-for="item in priceStore.items">
-
+   <div v-for="item in priceStore.items" class="flex justify-between mx-2">
+    <h2 class="mx-3 text-md font-semibold font-sans pt-2 text-[#393333]">
+          {{ item.product_name }}
+        </h2>
+        <span class="mx-3 text-md font-semibold font-sans pt-2 text-[#393333]"
+          >${{ product.product_price }}</span
+        >
    </div>
   </div>
 </ItemsModal>
@@ -95,7 +100,7 @@ modalActive.value = !modalActive.value
                 <font-awesome-icon
                 @click="toggleModal" 
                 :icon="['fas', 'cart-flatbed-suitcase']" 
-                class="text-[#716c6d]"/>
+                class="text-[#716c6d] cursor-pointer"/>
             </li>
           </ul>
           <ul class="flex sm:hidden" @click="showMenu = !showMenu">

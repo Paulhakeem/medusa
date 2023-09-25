@@ -1,4 +1,7 @@
 <script setup>
+import { RouterLink } from 'vue-router';
+
+
 defineEmits(["close-modal"]);
 defineProps({
   modalActive: {
@@ -23,10 +26,11 @@ defineProps({
           beat
         />
         <slot />
-
+       <RouterLink to="/login">
         <button class="text-white mt-8 bg-primary py-2 px-6 rounded-md">
           Make Payment
         </button>
+      </RouterLink>
       </div>
     </transition>
     </div>

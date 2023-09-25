@@ -1,8 +1,6 @@
 <script setup>
-// import { useItemsStore } from '../stores/items.js'
 import { usePriceStore } from '../stores/price.js'
 
-// const itemsStore = useItemsStore()
 const priceStore = usePriceStore()
 
 priceStore.fill()
@@ -30,7 +28,7 @@ priceStore.fill()
         >
         <div class="mb-3">
           <button
-          @click="itemsStore.increment"
+          @click="priceStore.addItems"
             class="mx-3 text-md font-light mt-3 items-left bg-primary
              text-white p-1 rounded-full w-28 hover:text-primary hover:border-2 hover:border-primary hover:bg-white"
           >

@@ -1,9 +1,9 @@
 <script setup>
 import {ref} from 'vue'
 import Header from "../components/Header.vue"
-import { useItemsStore } from '../stores/items.js'
+import { usePriceStore } from '../stores/price.js'
 
-const itemsStore = useItemsStore()
+const priceStore = usePriceStore()
 
 const firstName = ref('')
 const lastName = ref('')
@@ -176,7 +176,7 @@ const email = ref('')
       <hr class="mx-6 my-4" />
 
       <div class="text-center text-3xl font-light my-8">
-        <h1>{{ itemsStore.count }} items</h1>
+        <h1>{{ priceStore.count }} items</h1>
       </div>
 
       <div class="my-10 mx-6 space-y-8">
