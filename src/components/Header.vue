@@ -3,13 +3,47 @@ import { RouterLink } from "vue-router";
 import { ref } from "vue";
 const showMenu = ref(false);
 
-import { useItemsStore } from '../stores/items.js'
+import { usePriceStore } from '../stores/price.js'
+import ItemsModal from "./itemsModal.vue";
+const priceStore = usePriceStore()
 
-const itemsStore = useItemsStore()
+// modal
+const modalActive = ref(null)
+const toggleModal = () => {
+modalActive.value = !modalActive.value
+}
 
 </script>
 
 <template>
+
+<ItemsModal
+:modalActive="modalActive"
+ @close-modal="toggleModal"
+>
+  <div class="text-gray-500 my-4">
+   <h1 class="text-center uppercase">Your Items List</h1>
+   <hr class="text-gray-400 mx-2 my-2">
+
+
+   <div v-for="item in priceStore.items">
+
+   </div>
+  </div>
+</ItemsModal>
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- menu bar -->
   <div id="app" class="">
     <div class="justify-start sticky top-0">
       <div class="">
@@ -56,14 +90,12 @@ const itemsStore = useItemsStore()
               </RouterLink>
             </li>
 
-            <li class="hidden sm:flex">
-              <RouterLink
-                to="/dashboard"
-                class="text-[#716c6d] hover:text-primary text font-medium py-1 px-3 flex gap-2"
-                >
-                <p class="text-red-500 text-xs">{{ itemsStore.count }}</p>
-                <font-awesome-icon :icon="['fas', 'cart-flatbed-suitcase']" class="text-[#716c6d]"/>
-              </RouterLink>
+            <li class="hidden sm:flex my-2">
+                <p class="text-red-500 text-xs">{{ priceStore.count }}</p>
+                <font-awesome-icon
+                @click="toggleModal" 
+                :icon="['fas', 'cart-flatbed-suitcase']" 
+                class="text-[#716c6d]"/>
             </li>
           </ul>
           <ul class="flex sm:hidden" @click="showMenu = !showMenu">

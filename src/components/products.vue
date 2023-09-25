@@ -1,8 +1,8 @@
 <script setup>
-import { useItemsStore } from '../stores/items.js'
+// import { useItemsStore } from '../stores/items.js'
 import { usePriceStore } from '../stores/price.js'
 
-const itemsStore = useItemsStore()
+// const itemsStore = useItemsStore()
 const priceStore = usePriceStore()
 
 priceStore.fill()
