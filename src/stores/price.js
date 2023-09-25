@@ -1,16 +1,28 @@
 import { defineStore } from 'pinia'
-
+import product from '../products.js'
 export const usePriceStore  = defineStore('usePrice', {
     state: () => {
-        product: [
-            // {item1: 'Redox color table high quality', price: 900},
-            // {item2: '8GB RAM 256 SSD', price: 3000},
-            // {item3: '4GB RAM 256 SSD', price: 1000},
-            // {item4: 'Powerful camera upgrades', price: 999},
-            // {item5: 'High quality', price: 900},
-            // {item6: 'Redox color table high quality', price: 900},
-            // {item7: 'Redox color table high quality', price: 900},
-            // {item8: 'Redox color table high quality', price: 900},
-        ]
+       return {
+        product: [],
+        items: []
+       }
+    },
+    getters: {
+        count() {
+            return this.items.length
+        }
+  
+    },
+    actions: {
+        fill() {
+            this.product = product
+        },
+
+    addItems(count, items) {
+          count = parseInt(count)
+          for (let index=0; index < count; index++) {
+            this.items.push({...items})
+          }
+    }
     }
 })

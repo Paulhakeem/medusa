@@ -1,12 +1,12 @@
 <script setup>
-import { ref } from "vue";
- import products from "../products.js";
 import { useItemsStore } from '../stores/items.js'
+import { usePriceStore } from '../stores/price.js'
 
 const itemsStore = useItemsStore()
+const priceStore = usePriceStore()
 
+priceStore.fill()
 
- const items = ref(products);
 </script>
 <template>
   <div
@@ -16,7 +16,7 @@ const itemsStore = useItemsStore()
   </div>
 
   <div class="flex flex-wrap gap-6 mx-4 my-8 items-center justify-center">
-    <div v-for="product in items" :key="product.id">
+    <div v-for="product in priceStore.product" :key="product.id">
       <div class="border-2 border-[#f4f2f3] rounded-md w-72 h-full">
         <img :src="product.product_iamge_url" alt="" class="w-72" />
         <h2 class="mx-3 text-md font-semibold font-sans pt-2 text-[#393333]">

@@ -59,7 +59,7 @@ const itemsStore = useItemsStore()
             <li class="hidden sm:flex">
               <RouterLink
                 to="/dashboard"
-                class="text-[#716c6d] hover:text-primary text font-medium py-1 px-3 flex gap-1"
+                class="text-[#716c6d] hover:text-primary text font-medium py-1 px-3 flex gap-2"
                 >
                 <p class="text-red-500 text-xs">{{ itemsStore.count }}</p>
                 <font-awesome-icon :icon="['fas', 'cart-flatbed-suitcase']" class="text-[#716c6d]"/>
