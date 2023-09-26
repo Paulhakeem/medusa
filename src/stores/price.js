@@ -1,5 +1,6 @@
 import { defineStore } from 'pinia'
 import product from '../products.js'
+import products from '../products.js'
 export const usePriceStore  = defineStore('usePrice', {
     state: () => {
        return {
@@ -18,11 +19,8 @@ export const usePriceStore  = defineStore('usePrice', {
             this.product = product
         },
 
-    addItems(count, items) {
-          count = parseInt(count)
-          for (let index=0; index < count; index++) {
-            this.items.push({...product})
-          }
+    addItems() {
+      this.items.push(product)
     }
     }
 })

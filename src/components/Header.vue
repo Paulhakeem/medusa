@@ -26,12 +26,14 @@ modalActive.value = !modalActive.value
    <hr class="text-gray-400 mx-2 my-2">
 
 
-   <div v-for="item in priceStore.items" class="flex justify-between mx-2">
+   <div class="flex justify-between mx-2">
     <h2 class="mx-3 text-md font-semibold font-sans pt-2 text-[#393333]">
-          {{ item.product_name }}
+          <!-- {{ product.product_name }} -->
         </h2>
         <span class="mx-3 text-md font-semibold font-sans pt-2 text-[#393333]"
-          >${{ product.product_price }}</span
+          >
+          <!-- ${{ product.product_price }} -->
+          </span
         >
    </div>
   </div>
