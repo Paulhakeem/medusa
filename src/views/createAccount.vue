@@ -2,11 +2,15 @@
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 import Header from '../components/Header.vue'
-import { getAuth, createUserWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from "firebase/auth"
+import { getAuth, createUserWithEmailAndPassword, 
+	GoogleAuthProvider, GithubAuthProvider, 
+	FacebookAuthProvider, signInWithPopup } from "firebase/auth"
 
 
 const router = useRouter()
 const provider = new GoogleAuthProvider()
+const github = new GithubAuthProvider()
+const facebbok = new FacebookAuthProvider()
 
 const accountDetails =ref(
 	{
@@ -34,6 +38,26 @@ const createAccount = () => {
 
 const useGoogle = () => {
 	signInWithPopup(getAuth(), provider)
+	.then(() => {
+		path: '/dashboard'
+	})
+	.catch(err => {
+		alert(err.message)
+	})
+}
+
+const useGithub = () => {
+	signInWithPopup(getAuth(), github)
+	.then(() => {
+		path: '/dashboard'
+	})
+	.catch(err => {
+		alert(err.message)
+	})
+}
+
+const useFacebook = () => {
+	signInWithPopup(getAuth(), facebbok)
 	.then(() => {
 		path: '/dashboard'
 	})
@@ -79,12 +103,14 @@ const useGoogle = () => {
                             :icon="['fab', 'google']" />
 
 							<font-awesome-icon 
+							@click="useGithub"
 							class="text-gray-500 text-2xl cursor-pointer" 
 							:icon="['fab', 'github']" />
 
 							<font-awesome-icon 
+							@click="useFacebook"
 							class="text-gray-500 text-2xl cursor-pointer" 
-							:icon="['fab', 'x-twitter']" />
+							:icon="['fab', 'facebook']" />
                         </div>
 					</form>
 				</div>
