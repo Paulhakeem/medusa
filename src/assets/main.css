@@ -6,4 +6,12 @@
     .darshbord {
        flex-wrap: wrap;
     }
+    .container1{
+      width: 90%;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      margin-top: 34px;
+      margin-left: 20px;
+    }
  }
