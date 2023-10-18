@@ -1,17 +1,19 @@
 import { defineStore } from 'pinia'
 import product from '../products.js'
-import products from '../products.js'
 export const usePriceStore  = defineStore('usePrice', {
-    state: () => {
-       return {
+    state: () => ({
+       
         product: [],
-        items: []
-       }
-    },
+        items: [],
+        // randomIndexes: []
+    }),
     getters: {
         count() {
             return this.items.length
-        }
+        },
+        // getIndex() {
+        //  const randomIndexes = []
+        // 
   
     },
     actions: {
@@ -20,7 +22,7 @@ export const usePriceStore  = defineStore('usePrice', {
         },
 
     addItems() {
-      this.items.push(product)
-    }
+        
+            }
     }
 })

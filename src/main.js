@@ -21,6 +21,8 @@ library.add(fab, fas, far)
 const app = createApp(App)
 const pinia = createPinia()
 
+
+
 app.use(pinia)
 
 app.component('font-awesome-icon', FontAwesomeIcon)
