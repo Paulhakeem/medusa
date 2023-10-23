@@ -22,7 +22,10 @@ export const usePriceStore  = defineStore('usePrice', {
         },
 
     addItems() {
-        
-            }
+        const addCart = []
+        for (const value of Object.values(product)) {
+            console.log(value);
+        }
+     }
     }
 })

@@ -32,7 +32,7 @@ priceStore.fill()
             class="mx-3 text-md font-light mt-3 items-left bg-primary
              text-white p-1 rounded-full w-28 hover:text-primary hover:border-2 hover:border-primary hover:bg-white"
           >
-            BUY
+            ADD CART
           </button>
          
         </div>
