@@ -7,6 +7,7 @@ priceStore.fill()
 
 </script>
 <template>
+<div>
   <div
     class="p-3 bg-primary text-center mx-4 my-10 rounded-tl-md rounded-tr-md"
   > 
@@ -28,7 +29,7 @@ priceStore.fill()
         >
         <div class="mb-3">
           <button
-          @click="priceStore.addItems"
+          @click="priceStore.addItems(product.id)"
             class="mx-3 text-md font-light mt-3 items-left bg-primary
              text-white p-1 rounded-full w-28 hover:text-primary hover:border-2 hover:border-primary hover:bg-white"
           >
@@ -39,4 +40,6 @@ priceStore.fill()
       </div>
     </div>
   </div>
+</div>
+  
 </template>

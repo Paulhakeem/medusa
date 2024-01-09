@@ -68,7 +68,8 @@ const useFacebook = () => {
 </script>
 
 <template>
-    <Header/>
+<div>
+	 <Header/>
     <!-- component -->
 <div class="min-h-auto bg-gray-100 py-6 flex flex-col justify-center sm:py-12">
 	<div class="relative py-3 sm:max-w-xl sm:mx-auto">
@@ -118,4 +119,6 @@ const useFacebook = () => {
 		</div>
 	</div>
 </div>
+</div>
+   
 </template>

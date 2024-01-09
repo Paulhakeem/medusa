@@ -1,31 +1,33 @@
-import { defineStore } from 'pinia'
-import product from '../products.js'
-export const usePriceStore  = defineStore('usePrice', {
-    state: () => ({
-       
-        product: [],
-        items: [],
-        // randomIndexes: []
-    }),
-    getters: {
-        count() {
-            return this.items.length
-        },
-        // getIndex() {
-        //  const randomIndexes = []
-        // 
-  
-    },
-    actions: {
-        fill() {
-            this.product = product
-        },
+import { defineStore } from "pinia";
+import products from "../products.js";
+export const usePriceStore = defineStore("usePrice", {
+  state: () => ({
+    products: [],
+    cartItems: [],
 
-    addItems() {
-        const addCart = []
-        for (const value of Object.values(product)) {
-            console.log(value);
-        }
-     }
-    }
-})
+  }),
+
+  getters: {
+    count() {
+      return this.cartItems.length;
+    },
+ 
+  },
+  actions: {
+    fill() {
+      this.product = products;
+    },
+
+    addItems(item) {
+      let index = this.cartItems.findIndex((product) => product.id === item.id);
+      if (index !== -1) {
+        this.products[index].quantity += 1;
+        toast.sucess("Your item has been updated!");
+      } else {
+        item.quantity = 1;
+        this.cartItems.push(item);
+        toast.sucess("Your item has been saved!");
+      }
+    },
+  },
+});
