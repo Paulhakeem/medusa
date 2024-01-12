@@ -12,7 +12,8 @@ const email = ref('')
 
 </script>
 <template class="bg-[#eff4fc]">
-  <Header />
+<section>
+    <Header />
   <hr class="mx-4" />
   <div class="darshbord flex mx-6 my-10 justify-between">
     <div>
@@ -213,4 +214,5 @@ const email = ref('')
       </div>
     </div>
   </div>
+</section>
 </template>

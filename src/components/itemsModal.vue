@@ -18,7 +18,7 @@ defineProps({
       class="absolute w-full z-50 bg-black bg-opacity-30 h-screen top-0 left-0 flex justify-center px-8"
     >
     <transition name="modal-inner">
-      <div v-if="modalActive" class="p-4 bg-white self-start mt-32 max-w-md">
+      <div v-if="modalActive" class="p-4 bg-white self-start mt-32 w-96">
         <font-awesome-icon
           @click="$emit('close-modal')"
           class="text-primary cursor-pointer"
