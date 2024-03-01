@@ -3,8 +3,6 @@ import { usePriceStore } from '../stores/price.js'
 
 const priceStore = usePriceStore()
 
-priceStore.fill()
-
 </script>
 <template>
 <div>
@@ -15,7 +13,7 @@ priceStore.fill()
   </div>
 
   <div class="flex flex-wrap gap-6 mx-4 my-8 items-center justify-center">
-    <div v-for="product in priceStore.product" :key="product.id">
+    <div v-for="product in priceStore.products" :key="product.id">
       <div class="border-2 border-[#f4f2f3] rounded-md w-72 h-full">
         <img :src="product.product_iamge_url" alt="" class="w-72" />
         <h2 class="mx-3 text-md font-semibold font-sans pt-2 text-[#393333]">
@@ -29,7 +27,7 @@ priceStore.fill()
         >
         <div class="mb-3">
           <button
-          @click="priceStore.addItems"
+          @click="priceStore.addItems(product.id)"
             class="mx-3 text-md font-light mt-3 items-left bg-primary
              text-white p-1 rounded-full w-28 hover:text-primary hover:border-2 hover:border-primary hover:bg-white"
           >
