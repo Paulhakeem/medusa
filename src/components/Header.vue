@@ -40,7 +40,7 @@ const toggleModal = () => {
         >
           <p class="">Total</p>
           <p v-if="priceStore.totalPrice">${{ priceStore.totalPrice }}</p>
-          <p v-else>0</p>
+          <p v-else>$0.00</p>
         </div>
       </div>
     </ItemsModal>
