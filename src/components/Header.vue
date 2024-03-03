@@ -24,20 +24,25 @@ const toggleModal = () => {
         <div
           v-for="item in priceStore.cartItems"
           :key="item.id"
-          class="flex justify-between mx-2"
+          class="justify-between mx-2"
         >
-          <div>
+          <div class="flex justify-between">
             <h2
-              class="mx-3 text-md font-semibold font-sans pt-2 text-[#393333]"
+              class="mx-3 text-md font-sans pt-2 text-[#393333]"
             >
               {{ item.product_name }}
             </h2>
             <span
-              class="mx-3 text-md font-semibold font-sans pt-2 text-[#393333]"
+              class="mx-3 text-md font-sans pt-2 text-[#393333]"
             >
               ${{ item.product_price }}
             </span>
           </div>
+        </div>
+        <div class="flex justify-between mx-4 font-bold border-t-2 border-t-gray-600">
+          <p class="">Total</p>
+          <p v-if="priceStore.totalPrice">{{ priceStore.totalPrice }}</p>
+          <p v-else>0</p>
         </div>
       </div>
     </ItemsModal>

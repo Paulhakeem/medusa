@@ -1,4 +1,5 @@
 import { defineStore } from "pinia";
+import { computed } from "vue";
 
 export const usePriceStore = defineStore("usePrice", {
   state: () => ({
@@ -75,6 +76,9 @@ export const usePriceStore = defineStore("usePrice", {
   getters: {
     count(state) {
       return state.cartItems.length;
+    },
+    totalPrice() {
+      return this.cartItems.reduce((sum, item) => sum + item.product_price, 0);
     },
   },
   actions: {
