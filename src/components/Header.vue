@@ -27,19 +27,17 @@ const toggleModal = () => {
           class="justify-between mx-2"
         >
           <div class="flex justify-between">
-            <h2
-              class="mx-3 text-md font-sans pt-2 text-[#393333]"
-            >
+            <h2 class="mx-3 text-md font-sans pt-2 text-[#393333]">
               {{ item.product_name }}
             </h2>
-            <span
-              class="mx-3 text-md font-sans pt-2 text-[#393333]"
-            >
+            <span class="mx-3 text-md font-sans pt-2 text-[#393333]">
               ${{ item.product_price }}
             </span>
           </div>
         </div>
-        <div class="flex justify-between mx-4 font-bold border-t-2 border-t-gray-600">
+        <div
+          class="flex justify-between mx-4 font-bold border-t-2 border-t-gray-600"
+        >
           <p class="">Total</p>
           <p v-if="priceStore.totalPrice">{{ priceStore.totalPrice }}</p>
           <p v-else>0</p>
@@ -49,13 +47,13 @@ const toggleModal = () => {
 
     <!-- menu bar -->
     <div id="app" class="">
-      <div class="justify-start sticky top-0">
+      <div class="justify-start">
         <div class="">
           <nav class="flex container px-5 py-5">
             <ul class="justify-start flex flex-grow space-x-4">
-              <li>
+              <li class="flex gap-10">
                 <a href="/" class="space-x-3 md:mr-5">
-                  <h1 class="text-xl text-primary font-semibold">
+                  <h1 class="text-xl text-primary font-semibold gap-24">
                     Medusa
                     <font-awesome-icon
                       :icon="['fas', 'cart-shopping']"
@@ -63,6 +61,16 @@ const toggleModal = () => {
                     />
                   </h1>
                 </a>
+                <div class="pt-1">
+                  <span class="text-red-500 text-xs">{{
+                    priceStore.count
+                  }}</span>
+                  <font-awesome-icon
+                    @click="toggleModal"
+                    :icon="['fas', 'cart-flatbed-suitcase']"
+                    class="text-[#716c6d] cursor-pointer"
+                  />
+                </div>
               </li>
             </ul>
             <ul class="flex space-x-5 pt-2">
@@ -93,15 +101,6 @@ const toggleModal = () => {
                   class="text-[#716c6d] hover:text-primary text font-medium py-1 px-3"
                   >Fqs
                 </RouterLink>
-              </li>
-
-              <li class="hidden sm:flex my-2">
-                <p class="text-red-500 text-xs">{{ priceStore.count }}</p>
-                <font-awesome-icon
-                  @click="toggleModal"
-                  :icon="['fas', 'cart-flatbed-suitcase']"
-                  class="text-[#716c6d] cursor-pointer"
-                />
               </li>
             </ul>
             <ul class="flex sm:hidden" @click="showMenu = !showMenu">
