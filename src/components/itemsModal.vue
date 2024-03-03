@@ -1,6 +1,20 @@
 <script setup>
 import { RouterLink } from 'vue-router';
+import { usePriceStore } from "../stores/price.js";
+import { toast } from "vue3-toastify";
 
+ const priceStore = usePriceStore()
+const payment = () => {
+  if (priceStore.cartItems.length < 0) {
+    return toast.error('Something went wrong', {
+       autoClose: 1000,
+    })
+  } else {
+     router.push({
+        path: "/login",
+      });
+  }
+};
 
 defineEmits(["close-modal"]);
 defineProps({
@@ -26,11 +40,11 @@ defineProps({
           beat
         />
         <slot />
-       <RouterLink to="/login">
-        <button class="text-white mt-8 bg-primary py-2 px-6 rounded-md">
+     
+        <button @click="payment" class="text-white mt-8 bg-primary py-2 px-6 rounded-md">
           Make Payment
         </button>
-      </RouterLink>
+   
       </div>
     </transition>
     </div>

@@ -2,6 +2,7 @@
 import { ref } from "vue";
 import Header from "../components/Header.vue";
 import { usePriceStore } from "../stores/price.js";
+import { toast } from "vue3-toastify";
 
 const priceStore = usePriceStore();
 
@@ -9,6 +10,18 @@ const firstName = ref("");
 const lastName = ref("");
 const phoneNumber = ref("");
 const email = ref("");
+
+const notify = () => {
+  if (priceStore.totalPrice > 0) {
+    toast.success("payment complete, Thank you!", {
+      autoClose: 1000,
+    });
+  } else {
+    return toast.error('Something went wrong', {
+       autoClose: 1000,
+    })
+  }
+};
 </script>
 <template class="bg-[#eff4fc]">
   <section>
@@ -208,12 +221,12 @@ const email = ref("");
         <div class="my-4 mx-6">
           <div class="flex justify-between">
             <h3 class="text-[#393333] font-medium text-md">Total</h3>
-            <h3 class="text-[#393333] text-xl">$500</h3>
+            <h3 class="text-[#393333] text-xl">{{ priceStore.totalPrice }}</h3>
           </div>
         </div>
 
         <div class="my-10 text-center ml-4 mr-4">
-          <button class="bg-primary p-4 w-full text-white font-light">
+          <button  @click="notify" class="bg-primary p-4 w-full text-white font-light">
             Pay
             <font-awesome-icon
               :icon="['fas', 'arrow-right']"
