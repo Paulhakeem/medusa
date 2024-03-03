@@ -39,7 +39,7 @@ const toggleModal = () => {
           class="flex justify-between mx-4 font-bold border-t-2 border-t-gray-600"
         >
           <p class="">Total</p>
-          <p v-if="priceStore.totalPrice">{{ priceStore.totalPrice }}</p>
+          <p v-if="priceStore.totalPrice">${{ priceStore.totalPrice }}</p>
           <p v-else>0</p>
         </div>
       </div>
