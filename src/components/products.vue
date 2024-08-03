@@ -25,7 +25,7 @@ const priceStore = usePriceStore();
             >${{ product.product_price }}</span
           >
           <!-- button -->
-          <div @click="priceStore.addItems(product.id)" class="mx-2 mb-3">
+          <div @click="priceStore.addItems(product.id)" class="mx-2 mb-3 cursor-pointer">
             <div
               class="inline-flex overflow-hidden text-white bg-primary rounded group"
             >
