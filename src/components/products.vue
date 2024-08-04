@@ -12,8 +12,9 @@ const fetchedItems = productStore();
 
     <div class="flex flex-wrap gap-6 mx-4 my-8 items-center justify-center">
       <div v-for="product in fetchedItems.products" :key="product.id">
-        <RouterLink :to="'/product/' + product.id">
+        
         <div class="border-2 border-[#f4f2f3] rounded-md w-72 h-full cursor-pointer">
+          <RouterLink :to="'/product/' + product.id">
           <img :src="product.images[0]" alt="" class="w-72" />
           <h2 class="mx-3 text-md font-semibold font-sans pt-2 text-[#393333]">
             {{ product.title }}
@@ -21,6 +22,7 @@ const fetchedItems = productStore();
           <span class="mx-3 text-md font-medium font-sans pt-2 text-[#393333]"
             >${{ product.price }}</span
           >
+            </RouterLink>
           <!-- button -->
           <div
             @click="fetchedItems.addItems(product.id)"
@@ -51,7 +53,7 @@ const fetchedItems = productStore();
             </div>
           </div>
         </div>
-        </RouterLink>
+      
       </div>
     </div>
   </div>

@@ -1,5 +1,7 @@
 import { defineStore } from "pinia";
 import { ref, computed, onMounted } from "vue";
+import { toast } from 'vue3-toastify';
+import 'vue3-toastify/dist/index.css'
 
 export const productStore = defineStore("products", () => {
   const products = ref([]);
@@ -25,6 +27,9 @@ export const productStore = defineStore("products", () => {
     const findItem = cartItems.value.find((items) => items.id === id);
     if (findItem === undefined) {
       cartItems.value.push(currentObject);
+      return toast.success("item added to cart!", {
+        autoClose: 1000,
+      })
     } else {
       console.log("item exist");
     }
