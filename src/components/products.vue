@@ -28,7 +28,7 @@ const fetchedItems = productStore()
             >${{ product.price }}</span
           >
           <!-- button -->
-          <div @click="priceStore.addItems(product.id)" class="mx-2 mb-3 cursor-pointer">
+          <div @click="fetchedItems.addItems(product.id)" class="mx-2 mb-3 cursor-pointer">
             <div
               class="inline-flex overflow-hidden text-white bg-primary rounded group"
             >

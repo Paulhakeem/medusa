@@ -3,9 +3,9 @@ import { RouterLink } from "vue-router";
 import { ref } from "vue";
 const showMenu = ref(false);
 
-import { usePriceStore } from "../stores/price.js";
+import { productStore } from "../stores/products.js";
 import ItemsModal from "./itemsModal.vue";
-const priceStore = usePriceStore();
+const totalItems = productStore();
 
 // modal
 const modalActive = ref(null);
@@ -22,16 +22,16 @@ const toggleModal = () => {
         <hr class="text-gray-400 mx-2 my-2" />
 
         <div
-          v-for="item in priceStore.cartItems"
+          v-for="item in totalItems.cartItems"
           :key="item.id"
           class="justify-between mx-2"
         >
           <div class="flex justify-between">
-            <h2 class="mx-3 text-md font-sans pt-2 text-[#393333]">
-              {{ item.product_name }}
+            <h2 class="mx-3 text-md font-light font-sans pt-2 text-[#393333]">
+              {{ item.title }}
             </h2>
             <span class="mx-3 text-md font-sans pt-2 text-[#393333]">
-              ${{ item.product_price }}
+              ${{ item.price }}
             </span>
           </div>
         </div>
@@ -39,7 +39,7 @@ const toggleModal = () => {
           class="flex justify-between mx-4 font-bold border-t-2 border-t-gray-600"
         >
           <p class="">Total</p>
-          <p v-if="priceStore.totalPrice">${{ priceStore.totalPrice }}</p>
+          <p v-if="totalItems.totalPrice">${{ totalItems.totalPrice }}</p>
           <p v-else>$0.00</p>
         </div>
       </div>
@@ -63,7 +63,7 @@ const toggleModal = () => {
                 </a>
                 <div class="pt-1">
                   <span class="text-red-500 text-xs">{{
-                    priceStore.count
+                    totalItems.cartItemsLength
                   }}</span>
                   <font-awesome-icon
                     @click="toggleModal"
