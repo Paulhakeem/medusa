@@ -61,16 +61,6 @@ const toggleModal = () => {
                     />
                   </h1>
                 </a>
-                <div class="pt-1">
-                  <span class="text-red-500 text-xs">{{
-                    totalItems.cartItemsLength
-                  }}</span>
-                  <font-awesome-icon
-                    @click="toggleModal"
-                    :icon="['fas', 'cart-flatbed-suitcase']"
-                    class="text-[#716c6d] cursor-pointer"
-                  />
-                </div>
               </li>
             </ul>
             <ul class="flex space-x-5 pt-2">
@@ -102,6 +92,17 @@ const toggleModal = () => {
                   >Fqs
                 </RouterLink>
               </li>
+              
+                <div class="pt-1">
+                  <span class="text-red-500 text-xs">{{
+                    totalItems.cartItemsLength
+                  }}</span>
+                  <font-awesome-icon
+                    @click="toggleModal"
+                    :icon="['fas', 'cart-flatbed-suitcase']"
+                    class="text-[#716c6d] cursor-pointer"
+                  />
+                </div>
             </ul>
             <ul class="flex sm:hidden" @click="showMenu = !showMenu">
               <li>
