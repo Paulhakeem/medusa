@@ -205,7 +205,7 @@ const notify = () => {
         <div class="my-10 mx-6 space-y-8">
           <div class="flex justify-between">
             <h3 class="text-[#9e9d9d] font-light">Subtotal</h3>
-            <h3 class="text-[#393333]">$450.00</h3>
+            <h3 class="text-[#393333]">${{price.totalPrice}}</h3>
           </div>
           <div class="flex justify-between">
             <h3 class="text-[#9e9d9d] font-light">Discount</h3>
