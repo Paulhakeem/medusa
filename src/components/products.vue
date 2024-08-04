@@ -1,7 +1,10 @@
 <script setup>
 import { usePriceStore } from "../stores/price.js";
+import { productStore } from "../stores/products.js";
 
 const priceStore = usePriceStore();
+const fetchedItems = productStore()
+
 </script>
 <template>
   <div>
@@ -12,17 +15,17 @@ const priceStore = usePriceStore();
     </div>
 
     <div class="flex flex-wrap gap-6 mx-4 my-8 items-center justify-center">
-      <div v-for="product in priceStore.products" :key="product.id">
+      <div v-for="product in fetchedItems.products" :key="product.id">
         <div class="border-2 border-[#f4f2f3] rounded-md w-72 h-full">
-          <img :src="product.product_iamge_url" alt="" class="w-72" />
+          <img :src="product.images[0]" alt="" class="w-72" />
           <h2 class="mx-3 text-md font-semibold font-sans pt-2 text-[#393333]">
-            {{ product.product_name }}
+            {{ product.title }}
           </h2>
           <p class="mx-3 text-xs font-light text-[#9e9d9d] text-left">
-            {{ product.product_descrption }}
+            {{ product.category.name}}
           </p>
           <span class="mx-3 text-md font-semibold font-sans pt-2 text-[#393333]"
-            >${{ product.product_price }}</span
+            >${{ product.price }}</span
           >
           <!-- button -->
           <div @click="priceStore.addItems(product.id)" class="mx-2 mb-3 cursor-pointer">
@@ -60,5 +63,6 @@ const priceStore = usePriceStore();
         </div>
       </div>
     </div>
+    <button @click="fetchedItems.getProducts">fetch</button>
   </div>
 </template>
