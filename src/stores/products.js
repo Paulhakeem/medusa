@@ -35,7 +35,7 @@ export const productStore = defineStore("products", () => {
 
   //   total length
   const cartItemsLength = computed(() => {
-    return cartItems.length;
+    return cartItems.value.length;
   });
 
   //   calculate the total

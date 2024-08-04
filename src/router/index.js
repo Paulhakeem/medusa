@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import Dashboard from '../views/Dashboard.vue'
 import createAccount from '../views/createAccount.vue'
+import ProductDetails from '../views/ProductDetails.vue'
 import { auth } from '../firebase/auth'
 
 const router = createRouter({
@@ -22,6 +23,11 @@ const router = createRouter({
       path: '/login',
       name: 'login',
       component: createAccount
+    },
+    {
+      path: '/product/:id',
+      name: 'product',
+      component: ProductDetails
     }
   ]
 })

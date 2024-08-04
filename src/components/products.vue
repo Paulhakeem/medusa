@@ -1,32 +1,31 @@
 <script setup>
 import { productStore } from "../stores/products.js";
+import categories from "./categories.vue";
 
-const fetchedItems = productStore()
-
+const fetchedItems = productStore();
 </script>
 <template>
   <div>
-    <div
-      class="p-3 bg-primary text-center mx-4 my-10 rounded-tl-md rounded-tr-md"
-    >
-      <p class="text-white font-light text-2xl text-center mr-4">Flash Sales</p>
+    <div>
+      <categories />
     </div>
 
     <div class="flex flex-wrap gap-6 mx-4 my-8 items-center justify-center">
       <div v-for="product in fetchedItems.products" :key="product.id">
-        <div class="border-2 border-[#f4f2f3] rounded-md w-72 h-full">
+        <RouterLink :to="'/product/' + product.id">
+        <div class="border-2 border-[#f4f2f3] rounded-md w-72 h-full cursor-pointer">
           <img :src="product.images[0]" alt="" class="w-72" />
           <h2 class="mx-3 text-md font-semibold font-sans pt-2 text-[#393333]">
             {{ product.title }}
           </h2>
-          <p class="mx-3 text-xs font-light text-[#9e9d9d] text-left">
-            {{ product.category.name}}
-          </p>
-          <span class="mx-3 text-md font-semibold font-sans pt-2 text-[#393333]"
+          <span class="mx-3 text-md font-medium font-sans pt-2 text-[#393333]"
             >${{ product.price }}</span
           >
           <!-- button -->
-          <div @click="fetchedItems.addItems(product.id)" class="mx-2 mb-3 cursor-pointer">
+          <div
+            @click="fetchedItems.addItems(product.id)"
+            class="mx-2 mb-3 cursor-pointer"
+          >
             <div
               class="inline-flex overflow-hidden text-white bg-primary rounded group"
             >
@@ -52,6 +51,7 @@ const fetchedItems = productStore()
             </div>
           </div>
         </div>
+        </RouterLink>
       </div>
     </div>
   </div>
