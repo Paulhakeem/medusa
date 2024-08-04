@@ -1,21 +1,23 @@
 import { defineStore } from "pinia";
-import { ref, computed } from "vue";
+import { ref, computed, onMounted } from "vue";
 
 export const productStore = defineStore("products", () => {
   const products = ref([]);
   const cartItems = ref([]);
-  const getProducts = async () => {
+
+
+  onMounted(async() => {
     try {
-      const data = await fetch("https://api.escuelajs.co/api/v1/products");
-      const res = await data.json();
-      if (res) {
-        products.value = res;
-        console.log(res);
+        const data = await fetch("https://api.escuelajs.co/api/v1/products");
+        const res = await data.json();
+        if (res) {
+          products.value = res;
+          console.log(res);
+        }
+      } catch (error) {
+        alert(error.message);
       }
-    } catch (error) {
-      alert(error.message);
-    }
-  };
+  })
 
   //   cart
   const addItems = (id) => {
@@ -29,22 +31,23 @@ export const productStore = defineStore("products", () => {
     console.log(cartItems.value);
   };
 
-//   total length
+
+
+  //   total length
   const cartItemsLength = computed(() => {
     return cartItems.length;
   });
 
-//   calculate the total
-const totalPrice = computed(() => {
-    return cartItems.value.reduce((sum, item) => sum + item.price, 0)
-})
+  //   calculate the total
+  const totalPrice = computed(() => {
+    return cartItems.value.reduce((sum, item) => sum + item.price, 0);
+  });
 
   return {
-    getProducts,
     addItems,
     products,
     cartItems,
     cartItemsLength,
-    totalPrice
+    totalPrice,
   };
 });

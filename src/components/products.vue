@@ -1,8 +1,6 @@
 <script setup>
-import { usePriceStore } from "../stores/price.js";
 import { productStore } from "../stores/products.js";
 
-const priceStore = usePriceStore();
 const fetchedItems = productStore()
 
 </script>
@@ -52,17 +50,9 @@ const fetchedItems = productStore()
               </span>
               <span class="pl-4 pr-5 py-2.5">ADD CART</span>
             </div>
-            <!-- <button
-          
-            class="mx-3 text-md font-light mt-3 items-left bg-primary
-             text-white p-1 rounded-full w-28 hover:text-primary hover:border-2 hover:border-primary hover:bg-white"
-          >
-            ADD CART
-          </button> -->
           </div>
         </div>
       </div>
     </div>
-    <button @click="fetchedItems.getProducts">fetch</button>
   </div>
 </template>

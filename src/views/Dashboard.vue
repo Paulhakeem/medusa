@@ -1,10 +1,10 @@
 <script setup>
 import { ref } from "vue";
 import Header from "../components/Header.vue";
-import { usePriceStore } from "../stores/price.js";
 import { toast } from "vue3-toastify";
+import { productStore } from "../stores/products";
 
-const priceStore = usePriceStore();
+const price = productStore();
 
 const firstName = ref("");
 const lastName = ref("");
@@ -199,7 +199,7 @@ const notify = () => {
         <hr class="mx-6 my-4" />
 
         <div class="text-center text-3xl font-light my-8">
-          <h1>{{ priceStore.count }} items</h1>
+          <h1>{{ price.count }} items</h1>
         </div>
 
         <div class="my-10 mx-6 space-y-8">
@@ -221,7 +221,7 @@ const notify = () => {
         <div class="my-4 mx-6">
           <div class="flex justify-between">
             <h3 class="text-[#393333] font-medium text-md">Total</h3>
-            <h3 class="text-[#393333] text-xl">{{ priceStore.totalPrice }}</h3>
+            <h3 class="text-[#393333] text-xl">{{ price.totalPrice }}</h3>
           </div>
         </div>
 

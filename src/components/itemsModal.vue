@@ -1,12 +1,12 @@
 <script setup>
 import { useRouter } from "vue-router";
-import { usePriceStore } from "../stores/price.js";
+import { productStore } from "../stores/products.js";
 import { toast } from "vue3-toastify";
 
 const router = useRouter();
-const priceStore = usePriceStore();
+const store = productStore();
 const payment = () => {
-  if (priceStore.cartItems.length === 0) {
+  if (store.cartItems.length === 0) {
     return toast.error("Something went wrong", {
       autoClose: 1000,
     });

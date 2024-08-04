@@ -1,10 +1,10 @@
 <script setup>
 import { RouterLink } from "vue-router";
 import { ref } from "vue";
-const showMenu = ref(false);
-
 import { productStore } from "../stores/products.js";
 import ItemsModal from "./itemsModal.vue";
+
+const showMenu = ref(false);
 const totalItems = productStore();
 
 // modal
