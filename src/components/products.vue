@@ -1,8 +1,11 @@
 <script setup>
+import {ref} from 'vue'
 import { productStore } from "../stores/products.js";
 import categories from "./categories.vue";
 
 const fetchedItems = productStore();
+
+const showImage = ref(false)
 </script>
 <template>
   <div>
@@ -14,7 +17,7 @@ const fetchedItems = productStore();
         
         <div class="border-2 border-[#f4f2f3] rounded-md w-72 h-full cursor-pointer">
           <RouterLink :to="'/product/' + product.id">
-          <div v-if="product.images">
+          <div>
             <img :src="product.images[1]" alt="" class="w-72" />
           </div>
           <h2 class="mx-3 text-md font-semibold font-sans pt-2 text-[#393333]">

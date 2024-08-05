@@ -1,18 +1,18 @@
 <template>
   <div>
-    <form class="max-w-lg mx-auto">
+    <form class="max-w-lg mx-auto mt-8 mb-4">
       <div class="flex">
         <select
-          class="text-start space-y-20 py-2.5 px-4 text-sm font-medium text-gray-500 bg-gray-100 border border-gray-300 rounded-s-lg hover:bg-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-700 dark:text-white dark:border-gray-600"
+          class="text-start gap-10 py-2.5 px-4 text-sm font-medium text-gray-500 bg-gray-100 border border-gray-300 rounded-s-lg hover:bg-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-700 dark:text-white dark:border-gray-600"
         >
           <option selected class="pb-32">
             All categories
-            <font-awesome-icon :icon="['fas', 'chevron-down']" class="text-6xl"/>
+            <font-awesome-icon :icon="['fas', 'chevron-down']"/>
           </option>
-          <option class="electronics">Electronics</option>
-          <option>Funiture</option>
-          <option value="lux">Clothes</option>
-          <option value="lux">Shoes</option>
+          <option value="electronics" class="">Electronics</option>
+          <option value="funiture">Funiture</option>
+          <option value="clothes">Clothes</option>
+          <option value="shoes">Shoes</option>
         </select>
         <div class="relative w-full">
           <input
