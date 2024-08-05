@@ -9,13 +9,14 @@ const fetchedItems = productStore();
     <div>
       <categories />
     </div>
-
     <div class="flex flex-wrap gap-6 mx-4 my-8 items-center justify-center">
       <div v-for="product in fetchedItems.products" :key="product.id">
         
         <div class="border-2 border-[#f4f2f3] rounded-md w-72 h-full cursor-pointer">
           <RouterLink :to="'/product/' + product.id">
-          <img :src="product.images[0]" alt="" class="w-72" />
+          <div v-if="product.images">
+            <img :src="product.images[1]" alt="" class="w-72" />
+          </div>
           <h2 class="mx-3 text-md font-semibold font-sans pt-2 text-[#393333]">
             {{ product.title }}
           </h2>

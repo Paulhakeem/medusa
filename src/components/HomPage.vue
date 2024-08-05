@@ -1,10 +1,14 @@
 <script setup>
 import Header from "./Header.vue";
 import Products from "./products.vue";
+import searchInput from "./searchInput.vue";
 </script>
 <template>
   <div>
     <Header />
+     <!-- search -->
+    <search-input/>
+    <!-- search -->
     <div class="bg-[#f4f2f3] mx-4 my-3 rounded-md select-none">
       <div
         class="grid md:grid-cols-2 my-6 mx-12 justify-center items-center text-center"
@@ -113,7 +117,6 @@ import Products from "./products.vue";
         </div>
       </div>
     </div>
-
     <Products />
   </div>
 </template>

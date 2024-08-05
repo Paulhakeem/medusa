@@ -13,6 +13,7 @@
     "@fortawesome/free-regular-svg-icons": "^6.4.2",
     "@fortawesome/free-solid-svg-icons": "^6.4.2",
     "@fortawesome/vue-fontawesome": "^3.0.3",
+    "@headlessui/vue": "^1.7.22",
     "@medusa-vue/core": "^0.4.2",
     "firebase": "^10.4.0",
     "pinia": "^2.1.6",
