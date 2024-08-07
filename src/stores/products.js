@@ -6,6 +6,7 @@ import 'vue3-toastify/dist/index.css'
 export const productStore = defineStore("products", () => {
   const products = ref([]);
   const cartItems = ref([]);
+  const isLoading = ref(true)
 
 
   onMounted(async() => {
@@ -18,6 +19,8 @@ export const productStore = defineStore("products", () => {
         }
       } catch (error) {
         alert(error.message);
+      }finally{
+        isLoading.value = false
       }
   })
 
@@ -54,5 +57,6 @@ export const productStore = defineStore("products", () => {
     cartItems,
     cartItemsLength,
     totalPrice,
+    isLoading
   };
 });
