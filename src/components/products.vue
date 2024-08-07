@@ -22,7 +22,7 @@ const showImage = ref(false);
         >
           <RouterLink :to="'/product/' + product.id">
             <div>
-              <img :src="product.category.image" alt="" class="size-64" />
+              <img :src="product.images[0]" alt="" class="size-64" />
             </div>
             <h2
               class="mx-3 text-md font-semibold font-sans pt-2 text-[#393333]"
