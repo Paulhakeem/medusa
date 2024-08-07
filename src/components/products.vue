@@ -1,7 +1,6 @@
 <script setup>
 import { ref } from "vue";
 import { productStore } from "../stores/products.js";
-import categories from "./categories.vue";
 import LoadSpinner from "./LoadSpinner.vue";
 
 const fetchedItems = productStore();
@@ -12,9 +11,6 @@ const showImage = ref(false);
 </script>
 <template>
   <div>
-    <div>
-      <categories />
-    </div>
     <div class="flex flex-wrap gap-6 mx-4 my-8 items-center justify-center">
        <div v-if="fetchedItems.isLoading">
           <load-spinner />
@@ -22,11 +18,11 @@ const showImage = ref(false);
       <div v-for="product in fetchedItems.products" :key="product.id">
 
         <div
-          class="border-2 border-[#f4f2f3] rounded-md w-72 h-full cursor-pointer"
+          class="border-2 border-[#f4f2f3] rounded-md w-64 h-full cursor-pointer"
         >
           <RouterLink :to="'/product/' + product.id">
             <div>
-              <img :src="product.images[0]" alt="" class="w-72" />
+              <img :src="product.category.image" alt="" class="size-64" />
             </div>
             <h2
               class="mx-3 text-md font-semibold font-sans pt-2 text-[#393333]"

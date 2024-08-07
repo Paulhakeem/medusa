@@ -2,12 +2,13 @@
 import Header from "./Header.vue";
 import Products from "./products.vue";
 import searchInput from "./searchInput.vue";
+import sidebar from "./sidebar.vue";
 </script>
 <template>
   <div>
     <Header />
-     <!-- search -->
-    <search-input/>
+    <!-- search -->
+    <search-input />
     <!-- search -->
     <div class="bg-[#f4f2f3] mx-4 my-3 rounded-md select-none">
       <div
@@ -46,9 +47,6 @@ import searchInput from "./searchInput.vue";
             </span>
             <span class="relative text-white">Shop Now</span>
           </RouterLink>
-          <!-- <button class="bg-primary p-2 w-32 rounded-lg mt-8 text-white">
-          Shop Now
-        </button> -->
         </div>
         <div class="mt-4 mb-4">
           <img src="../assets/show.png" alt="" />
@@ -117,6 +115,7 @@ import searchInput from "./searchInput.vue";
         </div>
       </div>
     </div>
+    <sidebar />
     <Products />
   </div>
 </template>
