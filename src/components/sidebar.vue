@@ -1,7 +1,13 @@
 <template>
   <aside
-    class="w-52 h-screen float-left bg-primary text-white p-3 sticky rounded-tr-md"
+    v-if="showMenu"
+    class="w-52 h-screen float-left bg-primary text-white p-3 sticky rounded-tr-md top-0 "
   >
+    <!-- icon -->
+    <div id="closeMenu" class="float-right">
+      <font-awesome-icon @click="toggleMenu" :icon="['fas', 'xmark']" class="text-3xl cursor-pointer" />
+    </div>
+    <!-- icon -->
     <div class="flex justify-center text-center pt-4">
       <img
         src="../assets/profile.jpg"
@@ -48,6 +54,14 @@
   </aside>
 </template>
 
-<script setup></script>
+<script setup>
+import { ref } from "vue";
+
+const showMenu = ref(true);
+
+const toggleMenu = () => {
+  showMenu.value = !showMenu.value;
+};
+</script>
 
 <style lang="scss" scoped></style>
